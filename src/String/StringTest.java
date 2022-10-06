@@ -9,7 +9,10 @@ public class StringTest {
     public static void main(String[] args) {
         // StringBuffer的默认长度为16
         StringBuffer stringBuffer = new StringBuffer();
-        System.out.println("String");
+        stringBuffer.append("abcd");
+        System.out.println(stringBuffer);
+        String s = "abcd";
+        System.out.println(s.substring(2));
     }
 }
 

@@ -19,7 +19,7 @@ public class FileCopyTest01 {
             // fileInputStream 可以统计字节的数量 不建议使用在大数据的环境下
             byte[] input = new byte[1024];
             int readCount = 0;
-            fileInputStream = new FileInputStream("src/IO/File/io流");
+            fileInputStream = new FileInputStream("src/IO/File/IO流笔记");
             fileOutputStream = new FileOutputStream("src/IO/File/FileCopy");
             while ((readCount = fileInputStream.read(input)) != -1){
                 fileOutputStream.write(input,0,readCount);
