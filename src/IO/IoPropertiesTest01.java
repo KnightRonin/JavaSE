@@ -22,6 +22,5 @@ public class IoPropertiesTest01 {
 
         System.out.println(properties.getProperty("username"));
         System.out.println(properties.get("password"));
-
     }
 }

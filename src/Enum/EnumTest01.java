@@ -1,4 +1,4 @@
-package enum1;
+package Enum;
 
 /**
  * @Author HuangGuoFu
