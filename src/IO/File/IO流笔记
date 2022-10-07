@@ -43,3 +43,18 @@
 	对象流：
 		java.io.ObjectInputStream
 		java.io.ObjectOutputStream
+		ObjectOutputStream序列化
+		ObjectInputStream反序列化
+		参与序列化的类型必须实现Serialize接口
+5、transient关键字
+	transient参与的属性不会序列化
+6、序列化与反序列化
+	序列化：Java对象转换为字节序列的过程 【即将内存中的对象序列化到磁盘中】
+	反序列化：字节序列恢复为Java对象的过程 【即将磁盘中的对象反序列化到内存中】
+7、序列化版本号
+	java中区分类的机制
+		-- 通过类名来区分，类名不一样，类就不同
+		-- 如果类名相同，通过版本序列号区分，如果一个类不实现Serializable接口的话，java虚拟机会默认给序列版本号
+	缺陷
+		-- 自动生成的序列化版本号，不能修改原来的代码，十年之前是这样的，十年还是之后这样的，修改代码的话，序列化版本号会发生改变
+		-- 建议手动指定版本序列号 【private static final long serialVersionUID = 1L;】

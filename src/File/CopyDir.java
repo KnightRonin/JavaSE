@@ -40,7 +40,7 @@ public class CopyDir {
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
-                if (in != null){
+                if (in != null) {
                     try {
                         in.close();
                     } catch (IOException e) {
