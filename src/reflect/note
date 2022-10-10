@@ -1,0 +1,53 @@
+1、反射机制
+	什么是反射机制
+		Java反射机制的核心是在程序运行时动态加载类并获取类的详细信息，从而操作类或对象的属性和方法。
+		本质是JVM得到class对象之后，再通过class对象进行反编译，从而获取对象的各种信息
+	反射机制的使用
+		1.在运行时判断任意一个对象所属的类
+        2.在运行时构造任意一个类的对象
+        3.在运行时得到任意一个类所具有的成员变量和方法
+        4.在运行时调用任意一个对象的成员变量和方法
+        5.生成动态代理
+     反射机制相关类
+        java.lang.reflect
+        java.lang.Class:代表一个类即字节码文件
+        java.lang.reflect.Method:代表类的方法
+        java.lang.reflect.Field：代表类的成员变量
+        java.lang.reflect.Constructors：代表类的构造方法
+     反射机制优缺点
+        优点
+            类似于黑客，可以读和改字节码文件
+        缺点
+			耗时，效率慢
+2、获取Class的三种方式
+	1.Class.forName("全包名")
+	2.java中任何一个对象都有getClass()方法
+	3.java任何一种数据类型都有.class()方法
+3、获取Class之后
+	Class c = Class.forName("java.util.Date")
+	Object obj = c.newInstance()
+	可以通过newInstance()方法调用该类型的无参构造方法
+3、文件路径的问题
+	String path = Thread.currentThread().getContextClassLoader().
+                    getResource("config.properties").getPath();
+4、IO+properties快速绑定属性资源【资源绑定器】
+	只能绑定以properties结尾的文件，并且该文件必须在类路径下，里面的参数不可以写properties后缀
+	ResourceBundle bundle = ResourceBundle.getBundle("config");
+5、类加载器
+	什么是类加载器
+		专门负责加载类的工具
+	分为三个加载器
+		启动类加载器：专门加载jdk1.8/jre/lib/rt.jar 这些都是java核心类
+		扩展类加载器: 专门加载jdk1.8/jre/lib/ext/*.jar
+		应用类加载器: 专门加载classpath中的类
+	java中为了保证类加载的安全，使用了双亲委派机制，优先从启动类加载，启动类找不到，再去扩展类找，找不到，区应用类中加载
+
+6、Field
+	获取Field
+	反编译Field
+7、java.lang.Method
+	可变长参数
+		语法：类型...(后面一定是三个点)
+		public static void args(int... args){}
+		在参数类表中只能有一个，并且在最后的位置
+
